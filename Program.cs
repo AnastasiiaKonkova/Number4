@@ -5,7 +5,7 @@
     int result = 1;
     for (int step = 1; step <= B; step++)
     {
-        result = result * A;
+        result *= A;
     }
     if (B == 0) result = 1;
     if (B == 1) result = A;
@@ -29,7 +29,7 @@ Console.WriteLine($"{numA} в степени {numB} = {numC}");
     int result = 1;
     for (int step = 1; step <= Math.Abs(B); step++)
     {
-        result = result * A;
+        result *= A;
     }
     
     if (B > 1)
@@ -58,19 +58,18 @@ level (numA,numB );
 */
 
 // Задача 27: Напишите программу, которая принимает на вход число и выдаёт сумму цифр в числе.
-
 /*
 int summ(int num)
 {
     int result = 0;
     int endNum = 0;
-    while(num > 0)
+    while(Math.Abs(num) > 0)
     {
         endNum = num % 10;
-        result = result + endNum;
+        result += endNum;
         num /= 10;
     }
-    return result;
+    return Math.Abs(result);
 }
 
 Console.Write("Введите число: ");
@@ -81,3 +80,33 @@ Console.WriteLine($"Сумма цифр в числe {newnum} = {summNum}");
 */
 
 // Задача 29: Напишите программу, которая задаёт массив из 8 элементов и выводит их на экран.
+
+/*
+int[]CreateArray(int size)
+{
+    
+    int[]array = new int[size];
+    for (int i = 0; i < size; i++)
+    {
+    Console.Write($"Введите число №{i+1}: ");
+    array[i] = Convert.ToInt32(Console.ReadLine());
+    }
+    return array;
+}  
+void ShowArray(int[] array)
+{
+   
+    for (int i = 0;i<array.Length;i++)
+    {
+        if (i==0) Console.Write("[" + array[i] + ",");
+        else if (i==array.Length-1) Console.Write(array[i]+"]");
+        else
+        Console.Write(+ array[i]+",");
+    }
+}
+Console.Write("Введите размер массива: ");
+int newnum = Convert.ToInt32(Console.ReadLine());
+
+int[] myArray = CreateArray(newnum);
+ShowArray(myArray);
+*/
